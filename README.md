@@ -1,11 +1,10 @@
-# Luke's Auto-Rice Bootstrapping Scripts (LARBS)
+# Gabriwar's Auto-Rice Bootstrapping Scripts (GARBS?)
 
 ## Installation:
 
 On an Arch-based distribution as root, run the following:
 
 ```
-curl -LO larbs.xyz/larbs.sh
 sh larbs.sh
 ```
 
