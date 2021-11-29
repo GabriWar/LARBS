@@ -227,6 +227,7 @@ git update-index --assume-unchanged "/home/$name/README.md" "/home/$name/LICENSE
 #activate the multilib repo
 sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
 
+
 # Most important command! Get rid of the beep!
 systembeepoff
 
@@ -238,6 +239,12 @@ betterdiscordctl install
 # Make zsh the default shell for the user.
 chsh -s /bin/zsh "$name" >/dev/null 2>&1
 sudo -u "$name" mkdir -p "/home/$name/.cache/zsh/"
+
+#instal oh-my-zsh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+#installing black-arch repos
+sh -c "$(curl -fsSL https://blackarch.org/strap.sh)" 
 
 # dbus UUID must be generated for Artix runit.
 dbus-uuidgen > /var/lib/dbus/machine-id
