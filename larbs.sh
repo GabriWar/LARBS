@@ -244,6 +244,10 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 #installing black-arch repos
 sh -c "$(curl -fsSL https://blackarch.org/strap.sh)"
 
+#enabling and starting NetworkManager
+systemctl enable NetworkManager.service
+systemctl start NetworkManager.service
+
 #solving screen tearing issue with nvidia optimus card :)
 echo options nvidia-drm modeset=1 > /etc/modprobe.d/nvidia-drm-nomodeset.conf
 mkinitcpio -P
