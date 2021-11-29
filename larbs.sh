@@ -246,6 +246,7 @@ sh -c "$(curl -fsSL https://blackarch.org/strap.sh)"
 
 #solving screen tearing issue with nvidia optimus card :)
 echo options nvidia-drm modeset=1 > /etc/modprobe.d/nvidia-drm-nomodeset.conf
+mkinitcpio -P
 
 # dbus UUID must be generated for Artix runit.
 dbus-uuidgen > /var/lib/dbus/machine-id
