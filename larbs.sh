@@ -242,7 +242,10 @@ sudo -u "$name" mkdir -p "/home/$name/.cache/zsh/"
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 #installing black-arch repos
-sh -c "$(curl -fsSL https://blackarch.org/strap.sh)" 
+sh -c "$(curl -fsSL https://blackarch.org/strap.sh)"
+
+#solving screen tearing issue with nvidia optimus card :)
+echo options nvidia-drm modeset=1 > /etc/modprobe.d/nvidia-drm-nomodeset.conf
 
 # dbus UUID must be generated for Artix runit.
 dbus-uuidgen > /var/lib/dbus/machine-id
