@@ -284,6 +284,10 @@ newperms "%wheel ALL=(ALL) ALL #LARBS
 #installing black-arch repos
 sh -c "$(curl -fsSL https://blackarch.org/strap.sh)"
 
+#setting br layout
+localectl set-x11-keymap br abnt2
+
+
 
 # Last message! Install complete!
 finalize
