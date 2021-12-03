@@ -285,12 +285,8 @@ newperms "%wheel ALL=(ALL) ALL #LARBS
 sh -c "$(curl -fsSL https://blackarch.org/strap.sh)"
 
 
-#generating locale
-locale-gen
-
 #setting br layout
 localectl set-x11-keymap br abnt2
-
 
 
 # Last message! Install complete!
