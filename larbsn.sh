@@ -288,6 +288,26 @@ sh -c "$(curl -fsSL https://blackarch.org/strap.sh)"
 #setting br layout
 localectl set-x11-keymap br abnt2
 
+echo "
+Section "OutputClass"
+    Identifier "intel"
+    MatchDriver "i915"
+    Driver "modesetting"
+EndSection
+
+Section "OutputClass"
+    Identifier "nvidia"
+    MatchDriver "nvidia-drm"
+    Driver "nvidia"
+    Option "AllowEmptyInitialConfiguration"
+    Option "PrimaryGPU" "yes"
+    ModulePath "/usr/lib/nvidia/xorg"
+    ModulePath "/usr/lib/xorg/modules"
+EndSection
+" >> /etc/X11/xorg.conf.d/10-nvidia-drm-outputclass.conf
+
+
+
 
 # Last message! Install complete!
 finalize
