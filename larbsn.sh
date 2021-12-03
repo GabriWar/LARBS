@@ -303,8 +303,8 @@ Section "OutputClass"
     Option "PrimaryGPU" "yes"
     ModulePath "/usr/lib/nvidia/xorg"
     ModulePath "/usr/lib/xorg/modules"
-EndSection
-" >> /etc/X11/xorg.conf.d/10-nvidia-drm-outputclass.conf
+EndSection" >> /etc/X11/xorg.conf.d/10-nvidia-drm-outputclass.conf
+
 
 
 
