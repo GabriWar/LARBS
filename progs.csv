@@ -98,4 +98,4 @@ A,fetchmirrors,"pacman mirrors yay"
 ,xorg-server-devel,"xorg server devel pack"
 ,opencl-nvidia,"opencl for nvidia"
 A,nerd-fonts-complete,"may take a while"
-
+,arch-install-scripts,"the arch install scripts"
