@@ -202,7 +202,7 @@ sed -i 's/#VerbosePkgLists/VerbosePkgLists/' /etc/pacman.conf
 sed -i 's/#ParallelDownloads/ParallelDownloads/' /etc/pacman.conf
 
 # Use all cores for compilation.
-sed -i "s/-j2/-j$(nproc)/;s/^#MAKEFLAGS/MAKEFLAGS/" /etc/makepkg.conf
+sed -i "s/-j2/-j$(nproc)/;/MAKEFLAGS/s/^#//" /etc/makepkg.conf
 
 manualinstall yay || error "Failed to install AUR helper."
 
