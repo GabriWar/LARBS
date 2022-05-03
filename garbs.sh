@@ -76,7 +76,7 @@ refreshkeys() { \
 Include = /etc/pacman.d/mirrorlist-arch" >> /etc/pacman.conf
 			done
 			pacman -Sy >/dev/null 2>&1
-			pacman-key --populate archlinux
+			pacman-key --populate archlinux >/dev/null 2>&1
 			;;
 	esac ;}
 
