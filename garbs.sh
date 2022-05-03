@@ -197,7 +197,7 @@ newperms "%wheel ALL=(ALL) NOPASSWD: ALL"
 
 # Make pacman colorful, concurrent downloads and Pacman eye-candy.
 grep -q "ILoveCandy" /etc/pacman.conf || sed -i "/#VerbosePkgLists/a ILoveCandy" /etc/pacman.conf
-sed -i "s/^#ParallelDownloads.*$/ParallelDownloads = 5/;s/^#Color$/Color/" /etc/pacman.conf
+sed -i "s/^#ParallelDownloads.*/ParallelDownloads = 5/;/Color$/s/^#//" /etc/pacman.conf
 sed -i 's/#VerbosePkgLists/VerbosePkgLists/' /etc/pacman.conf
 sed -i 's/#ParallelDownloads/ParallelDownloads/' /etc/pacman.conf
 
