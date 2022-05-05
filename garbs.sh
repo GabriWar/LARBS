@@ -285,7 +285,7 @@ newperms "%wheel ALL=(ALL) ALL #GARBS
 #installing black-arch repos
 sh -c "$(curl -fsSL https://blackarch.org/strap.sh)" >> /dev/null
 
-
+chmod +x /home/$name/.local/bin/*
 #setting br layout
 #localectl set-x11-keymap br abnt2
 
