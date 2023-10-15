@@ -7,7 +7,7 @@ On an Arch-based distribution as root, run the following:
 ```
 sh garbs.sh
 ```
-or if youre using an nvidia GPU:
+(EXPERIMENTAL!!!!!)or if youre using an nvidia GPU:
 ```
 sh garbsn.sh
 ```
@@ -23,4 +23,6 @@ That's it.
 
 ## TODO:
 - add coolbits config as default in the nvidia installer (gives more control over things)
-- ...
+- make sure it istalls nviia drivers (just download it form the nidia website and exectue it without starting x, dont autoconfig the x config)
+- auto runs steam using gamemoderun
+- make easier to use mangohud (maybe a shortcut)
