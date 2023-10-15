@@ -109,3 +109,7 @@ A,pcmanfm-git,"gui file manager"
 A,gamemode-git,"more fps"
 A,ly-git, cool display manager
 ,mpv, media player
+,lm_sensors, detect and control fans/sensors
+A, fancontrol-gui, control fans
+A,  mangohud-git, fps meter
+
