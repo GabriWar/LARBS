@@ -239,9 +239,10 @@ betterdiscordctl install
 chsh -s /bin/zsh "$name" >/dev/null 2>&1
 sudo -u "$name" mkdir -p "/home/$name/.cache/zsh/"
 
-#enabling and starting NetworkManager
+#enabling and starting NetworkManager and ly
 systemctl enable NetworkManager.service
 systemctl start NetworkManager.service
+systemctl enable ly.service
 
 #solving screen tearing issue with nvidia optimus card :)
 echo options nvidia-drm modeset=1 > /etc/modprobe.d/nvidia-drm-nomodeset.conf
