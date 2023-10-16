@@ -92,7 +92,7 @@ A,fetchmirrors,"pacman mirrors yay"
 ,alsa-utils,"sound"
 ,alsa-firmware,"sound"
 ,calcurse,"dependency"
-,network-manager,"nmtui"
+,networkmanager,"nmtui"
 ,bmon,"bmon"
 ,nvidia-utils,"for nvidia gpus"
 ,nvidia-settings,"gpu settings"
@@ -118,4 +118,3 @@ A, fancontrol-gui, control fans
 A,  mangohud-git, fps meter
 A, linux-zen-headers, kernel sources for linux zen
 , linux-headers, kernel sources for linux default
-
