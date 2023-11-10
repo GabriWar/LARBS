@@ -1,5 +1,22 @@
 # Gabriwar's Auto-Rice Bootstrapping Scripts (GARBS?)
 
+
+## Features 
+- hghly customizable
+- EXTREMELY LOW resourece usage (RAM usage usually sits around 700 MB when idle and 1 to 3GB when browsing)
+- light installation size (less than 8 GB if packages are modified)
+- easy to make shortcuts
+- no need for a mouse or trackpad
+- easy to use
+- simple but beautiful design
+- perfect for low-end or older hardware
+- focused on security, privacy, and usability
+
+
+![memory usage](https://raw.githubusercontent.com/GabriWar/LARBS/master/pic-full-231110-2148-44.png)
+![BTOP](https://raw.githubusercontent.com/GabriWar/LARBS/master/pic-full-231110-2149-16.png)
+
+
 ## Installation:
 
 On an Arch-based distribution as root, run the following:
