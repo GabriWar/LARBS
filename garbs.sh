@@ -61,7 +61,24 @@ adduserandpass() { \
 	echo "$name:$pass1" | chpasswd
 	unset pass1 pass2 ;}
 
-
+refreshkeys() { \
+	case "$(readlink -f /sbin/init)" in
+		*systemd* )
+			dialog --infobox "Refreshing Arch Keyring..." 4 40
+			pacman --noconfirm -S archlinux-keyring >/dev/null 2>&1
+			;;
+		*)
+			dialog --infobox "Enabling Arch Repositories..." 4 40
+			pacman --noconfirm --needed -S artix-keyring artix-archlinux-support >/dev/null 2>&1
+			for repo in extra community; do
+				grep -q "^\[$repo\]" /etc/pacman.conf ||
+					echo "[$repo]
+Include = /etc/pacman.d/mirrorlist-arch" >> /etc/pacman.conf
+			done
+			pacman -Sy >/dev/null 2>&1
+			pacman-key --populate archlinux >/dev/null 2>&1
+			;;
+	esac ;}
 
 newperms() { # Set special sudoers settings for install (or after).
 	sed -i "/#GARBS/d" /etc/sudoers
@@ -159,13 +176,16 @@ preinstallmsg || error "User exited."
 
 ### The rest of the script requires no user input.
 
+# Refresh Arch keyrings.
+refreshkeys || error "Error automatically refreshing Arch keyring. Consider doing so manually."
 
-
-for x in curl base-devel git  zsh ; do
+for x in curl ca-certificates base-devel git ntp zsh ; do
 	dialog --title "GARBS Installation" --infobox "Installing \`$x\` which is required to install and configure other programs." 5 70
 	installpkg "$x"
 done
 
+dialog --title "GARBS Installation" --infobox "Synchronizing system time to ensure successful and secure installation of software..." 4 70
+ntpdate 0.us.pool.ntp.org >/dev/null 2>&1
 
 adduserandpass || error "Error adding username and/or password."
 
