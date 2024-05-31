@@ -161,7 +161,7 @@ preinstallmsg || error "User exited."
 
 
 
-for x in curl ca-certificates base-devel git ntp zsh ; do
+for x in curl base-devel git ntp zsh ; do
 	dialog --title "GARBS Installation" --infobox "Installing \`$x\` which is required to install and configure other programs." 5 70
 	installpkg "$x"
 done
