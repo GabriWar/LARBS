@@ -161,13 +161,11 @@ preinstallmsg || error "User exited."
 
 
 
-for x in curl base-devel git ntp zsh ; do
+for x in curl base-devel git  zsh ; do
 	dialog --title "GARBS Installation" --infobox "Installing \`$x\` which is required to install and configure other programs." 5 70
 	installpkg "$x"
 done
 
-dialog --title "GARBS Installation" --infobox "Synchronizing system time to ensure successful and secure installation of software..." 4 70
-ntpdate 0.us.pool.ntp.org >/dev/null 2>&1
 
 adduserandpass || error "Error adding username and/or password."
 
