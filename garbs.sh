@@ -88,7 +88,7 @@ manualinstall() { # Installs $1 manually. Used only for AUR helper here.
 	# Should be run after repodir is created and var is set.
 	dialog --infobox "Installing \"$1\", an AUR helper..." 4 50
 	sudo -u "$name" mkdir -p "$repodir/$1"
-	sudo -u "$name" git clone --depth 1 "https://aur.archlinux.org/$1.git" "$repodir/$1" >/dev/null 2>&1 ||
+	sudo -u "$name" git clone --depth 1 "https://aur.archlinux.org/yay.git" "$repodir/$1" >/dev/null 2>&1 ||
 		{ cd "$repodir/$1" || return 1 ; sudo -u "$name" git pull --force origin master;}
 	cd "$repodir/$1"
 	sudo -u "$name" -D "$repodir/$1" makepkg --noconfirm -si >/dev/null 2>&1 || return 1
